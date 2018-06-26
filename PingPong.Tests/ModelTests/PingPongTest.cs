@@ -7,39 +7,39 @@ namespace PingPong.Tests
   public class PingPongGeneratorTest
   {
     [TestMethod]
-    public void IsPingPong_NumberDivisibleByThree_True()
+    public void ConvertToPingPong_NumberDivisibleByThree()
     {
       PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual(true, testPingPong.IsPingPong(10));
+      Assert.AreEqual("Ping", testPingPong.ConvertToPingPong(3));
     }
 
     [TestMethod]
-    public void IsPingPong_NumberDivisibleByThree_False()
+    public void ConvertToPingPong_NumberDivisibleByFive()
     {
       PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual(false, testPingPong.IsPingPong(5));
+      Assert.AreEqual("Pong", testPingPong.ConvertToPingPong(5));
     }
 
     [TestMethod]
-    public void IsPingPong_NumberDivisibleByFive_True()
+    public void ConvertToPingPong_NumberDivisibleByThreeAndFive()
     {
       PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual(true, testPingPong.IsPingPong(5));
+      Assert.AreEqual("PingPong", testPingPong.ConvertToPingPong(15));
     }
 
     [TestMethod]
-    public void IsPingPong_NumberDivisibleByThreeAndFive_True()
+    public void ConvertToPingPong_NumberNotDivisiveByThreeOrFive()
     {
       PingPongGenerator testPingPong = new PingPongGenerator();
-      Assert.AreEqual(true, testPingPong.IsPingPong(15));
+      Assert.AreEqual("22", testPingPong.ConvertToPingPong(22));
     }
 
-    [TestMethod]
-    public void PrintOutNumberList()
-    {
-      PingPongCounter testPingPong = new PingPongCounter();
-
-    }
+    // [TestMethod]
+    // public void PrintOutNumberList()
+    // {
+    //   PingPongCounter testPingPong = new PingPongCounter();
+    //
+    // }
 
   }
 }
