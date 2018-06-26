@@ -1,33 +1,45 @@
+using System;
+
 namespace PingPong
 {
   public class PingPongGenerator
   {
-    public bool IsPingPong(int number)
+    public void Run()
     {
-      if (number % 3 == 0 && number % 5 == 0)
+      Console.WriteLine("Please enter a number:");
+      string numberAsString = Console.ReadLine();
+      int number = int.Parse(numberAsString);
+      for(int i = 1; i <= number; i++)
       {
-        return true;
-      }
-      else if (number % 3 == 0)
-      {
-        return true;
-      }
-      else if (number % 5 == 0)
-      {
-        return true;
-      }
-      else
-      {
-        return false;
+        string result = ConvertToPingPong(i);
+        Console.WriteLine(result);
       }
     }
 
-    public int PingPongCounter(int number)
+    public string ConvertToPingPong(int number)
     {
-      for(int i = 1; i <= number; i++)
-      {
-        IsPingPong(i);
-      }
+      if (number % 3 == 0 && number % 5 == 0)
+        {
+          return "PingPong";
+        }
+        else if (number % 3 == 0)
+        {
+          return "Ping";
+        }
+        else if (number % 5 == 0)
+        {
+          return "Pong";
+        }
+        return number.ToString();
+    }
+  }
+
+  public class Program
+  {
+    public static void Main()
+    {
+      PingPongGenerator game = new PingPongGenerator();
+      game.Run();
     }
   }
 }
